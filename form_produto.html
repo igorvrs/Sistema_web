@@ -1,0 +1,56 @@
+<script>
+
+function calcula(){
+
+	var valor = document.getElementById('valor').value;
+	var valor_vd;
+	var valor_dsc;
+	
+	valor_vd = valor * 1.3;
+
+    valor_dsc = valor_vd * 0.88;
+		
+	document.getElementById('valor_venda').value = valor_vd.toFixed(2);
+	document.getElementById('valor_desc').value = valor_dsc.toFixed(2);	
+	} 
+</script> 
+
+<html> 
+<head> 
+<body> 
+<meta charset="utf-8">
+<form name="produto" method="post" id="produto" action="cad_prod.php">
+<fieldset>
+<legend>Dados cadastrais</legend>
+ID do forncedor:
+<input type="text" name="id_forn" id="id_forn" size="8" maxlength="11" value=""/><br>
+Nome:<br>
+<input type="text" name="nome" id="nome" size="50" maxlength="64" value=""/> &nbsp;&nbsp;&nbsp;
+<select title="Selecione" name="selecione">
+  <option>Selecione</option>
+  <option value="perecivil">Perecivil</option>
+  <option value="nao_perecivil">Nao perecivil</option>
+</select title="Selecione"> &nbsp;&nbsp;&nbsp;&nbsp; 
+Quantidade de estoque:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="qtd_estoque" id="qtd_estoque" size="10" value=""/>
+
+<br><br>
+Valor unitário:
+<input type="text" name="valor" id="valor" size="10" value=""/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+Valor de venda:
+ <input type="text" disabled name="valor_venda" id="valor_venda" size="10" value="" /> &nbsp;&nbsp;&nbsp;
+Valor máximo de desconto:
+<input type="text" disabled name="valor_desc" id="valor_desc" size="10" value=""/> <br>
+<br>
+Descrição:<br>
+<textarea name="descricao" rows="5" cols="60"></textarea> 
+
+</fieldset> <br>
+<input type="submit" name="cadastrar" id="cadastrar" value="Cadastrar" />
+</form>
+<input type="submit" id="calcular" value="Calcular" onclick="calcula()"/>
+</body>
+</head>
+</html>

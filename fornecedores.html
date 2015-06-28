@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<script type="text/javascript" src="js/jquery.js"></script>
+
+<script>
+	$(document).ready(function(){
+	   $("#forncedor").submit(function(){
+			  var email = $("#email").val();
+			  if(email != ""){
+				 var filtro = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+				 if(filtro.test(email)){
+					   alert("Endereço Valido");
+					   return true;
+					} 
+					else {
+					   alert("Email Nao Valido");
+					   event.preventDefault();
+					   return false;
+					}
+			    }
+				else {
+					alert('Digite um email!');
+					event.preventDefault();
+					return false;
+				}
+	    });
+	});
+</script>
+</script>
+
+<body>
+<meta charset="utf-8">
+</head>
+<form name="fornecedor" method="post" id="fornecedor" action="cad_forn.php">
+<fieldset>
+<legend>Dados cadastrais</legend>
+Razão:<br>
+<input type="text" name="razao" id="razao" size="50" value=""/> &nbsp;&nbsp;&nbsp;
+CNPJ:
+<input type="text" name="cnpj" size="20" maxlength="14" value=""/> <br>
+Rua:<br>
+<input type="text" name="rua" size="50" value=""/> &nbsp;&nbsp;&nbsp;
+Numero:
+<input type="text" name="numero" size="10" value=""/> <br>
+Complemento:<br>
+<input type="text" name="complemento" size="20" value=""/>&nbsp;&nbsp;&nbsp;
+Bairro:
+<input type="text" name="bairro" size="15" value=""/>&nbsp;&nbsp;&nbsp;
+CEP:
+<input type="text" name="cep" size="10" maxlength="8" value=""/> <br>
+Cidade: <br>
+<input type="text" name="cidade" size="20" value=""/>&nbsp;&nbsp;&nbsp;
+UF:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="uf" size="3" maxlength="2" value=""/>&nbsp;&nbsp;&nbsp;
+País:
+<input type="text" name="pais" size="15" value=""/> <br>
+Fone:<br>
+<input type="text" name="fone" size="20" maxlength="11" value=""/>&nbsp;&nbsp;&nbsp;
+E-mail:
+<input type="text" name="email" size="40" id="email"/> <br>
+</fieldset> <br>
+<input type="submit" value="Cadastrar">
+</form>
+<html>
+ <head>
+  <title>Busca Fornecedor</title>
+ </head>
+<body>
+<br><br>
+<form name="busca_forn" method="post" id="busca_forn" action="busca_forn.php">
+<fieldset>
+<legend> Busca </legend>
+Busca por CNPJ:<br>
+<input type="text" name="bus_cnpj" id="bus_cnpj" size="30" value=""/> &nbsp;&nbsp;&nbsp;&nbsp;
+<input type="submit" value="Buscar">
+</fieldset>
+</form>
+</body>
+</html>
+</body>
+
+
+</html>
