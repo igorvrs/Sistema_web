@@ -1,13 +1,21 @@
 <?php
+ini_set('default_charset', 'UTF-8');
 include('conecta.php');
 $fornec_id = $_POST['id_forn'];
 $nome = $_POST['nome'];
 $selecione = $_POST['selecione'];
+//$selecione = utf8_decode($selecione);
 $qtd_estoque = $_POST['qtd_estoque'];
 $valor_unit = $_POST['valor'];
-$valor_venda = $_POST['valor_venda'];
-$valor_desc = $_POST['valor_desc'];
+$valor_venda = $_POST['lucro'];
+$valor_desc = $_POST['desconto_max'];
 $descricao = $_POST['descricao'];
+
+if ($selecione == 1)
+   $selecione = "perecível";
+else
+   $selecione = "não perecível";
+
 
 $res = mysql_query("select * from fornecedores where forn_id = '".$fornec_id."'");
 
@@ -22,8 +30,8 @@ else{
 	   
 	} else {
 
- $sql = mysql_query("INSERT INTO produto (prod_nome, prod_tipo, prod_desc, prod_valorunit, prod_valorvenda, fornec_id, prod_desconto, prod_qtdestoque) values	
-  ('".$nome."', '".$selecione."', '".$valor_desc."', '".$valor_unit."', '".$valor_venda."', '".$fornec_id."', '".$valor_desc."', '".$qtd_estoque."')")
+ $sql = mysql_query ("INSERT INTO produto (prod_nome, `prod_tipo`, prod_desc, prod_valorunit, prod_valorvenda, fornec_id, prod_desconto, prod_qtdestoque) values	
+  ('".$nome."', ('".$selecione."'), '".$descricao."', '".$valor_unit."', '".$valor_venda."', '".$fornec_id."', '".$valor_desc."', '".$qtd_estoque."')")
    or die (mysql_error());      
     }
 }

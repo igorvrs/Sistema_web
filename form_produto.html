@@ -3,15 +3,18 @@
 function calcula(){
 
 	var valor = document.getElementById('valor').value;
-	var valor_vd;
-	var valor_dsc;
+	var lucro_prod;
+	var desc_prod;
 	
-	valor_vd = valor * 1.3;
+	lucro_prod = valor * 1.3;
 
-    valor_dsc = valor_vd * 0.88;
+    desc_prod = lucro_prod * 0.88;
 		
-	document.getElementById('valor_venda').value = valor_vd.toFixed(2);
-	document.getElementById('valor_desc').value = valor_dsc.toFixed(2);	
+	document.getElementById('lucro').value = lucro_prod.toFixed(2);
+	document.getElementById('desconto_max').value = desc_prod.toFixed(2);	
+	//valor_vd = valor_vd.toFixed(2);
+	//valor_vd.element.setAttribute("valor_vd", "valor_venda");
+	
 	} 
 </script> 
 
@@ -28,8 +31,8 @@ Nome:<br>
 <input type="text" name="nome" id="nome" size="50" maxlength="64" value=""/> &nbsp;&nbsp;&nbsp;
 <select title="Selecione" name="selecione">
   <option>Selecione</option>
-  <option value="perecivil">Perecivil</option>
-  <option value="nao_perecivil">Nao perecivil</option>
+  <option value="1">Perecivil</option>
+  <option value="0">Nao perecivil</option>
 </select title="Selecione"> &nbsp;&nbsp;&nbsp;&nbsp; 
 Quantidade de estoque:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="qtd_estoque" id="qtd_estoque" size="10" value=""/>
@@ -39,10 +42,10 @@ Valor unitário:
 <input type="text" name="valor" id="valor" size="10" value=""/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-Valor de venda:
- <input type="text" disabled name="valor_venda" id="valor_venda" size="10" value="" /> &nbsp;&nbsp;&nbsp;
+Valor de venda: 
+ <input type="text" name="lucro" id="lucro" size="10" readonly value=""  /> &nbsp;&nbsp;&nbsp; 
 Valor máximo de desconto:
-<input type="text" disabled name="valor_desc" id="valor_desc" size="10" value=""/> <br>
+<input type="text" name="desconto_max" id="desconto_max" size="10" readonly value=""  /> <br>
 <br>
 Descrição:<br>
 <textarea name="descricao" rows="5" cols="60"></textarea> 
