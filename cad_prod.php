@@ -11,12 +11,13 @@ $valor_venda = $_POST['lucro'];
 $valor_desc = $_POST['desconto_max'];
 $descricao = $_POST['descricao'];
 
-if ($selecione == 1)
+/*if ($selecione == 1)
    $selecione = "perecível";
 else
    $selecione = "não perecível";
-
-
+*/
+print_r($_POST);
+exit;
 $res = mysql_query("select * from fornecedores where forn_id = '".$fornec_id."'");
 
 while($escrever=mysql_fetch_array($res)){
@@ -30,8 +31,8 @@ else{
 	   
 	} else {
 
- $sql = mysql_query ("INSERT INTO produto (prod_nome, `prod_tipo`, prod_desc, prod_valorunit, prod_valorvenda, fornec_id, prod_desconto, prod_qtdestoque) values	
-  ('".$nome."', ('".$selecione."'), '".$descricao."', '".$valor_unit."', '".$valor_venda."', '".$fornec_id."', '".$valor_desc."', '".$qtd_estoque."')")
+ $sql = mysql_query ("INSERT INTO produto (prod_nome, prod_tipo, prod_desc, prod_valorunit, prod_valorvenda, fornec_id, prod_desconto, prod_qtdestoque) values	
+  ('".$nome."', '".$nome."', '".$descricao."', '".$valor_unit."', '".$valor_venda."', '".$fornec_id."', '".$valor_desc."', '".$qtd_estoque."')")
    or die (mysql_error());      
     }
 }
