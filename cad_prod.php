@@ -16,8 +16,7 @@ $descricao = $_POST['descricao'];
 else
    $selecione = "não perecível";
 */
-print_r($_POST);
-exit;
+
 $res = mysql_query("select * from fornecedores where forn_id = '".$fornec_id."'");
 
 while($escrever=mysql_fetch_array($res)){
