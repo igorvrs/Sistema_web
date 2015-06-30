@@ -1,5 +1,5 @@
 <?php
-ini_set('default_charset', 'UTF-8');
+header('Content-Type: text/html; charset=latin1_swedish_ci');
 include('conecta.php');
 $fornec_id = $_POST['id_forn'];
 $nome = $_POST['nome'];
@@ -32,7 +32,7 @@ while($escrever=mysql_fetch_array($res)){
 	 else 
 
  $sql = mysql_query ("INSERT INTO produto (prod_nome, prod_tipo, prod_desc, prod_valorunit, prod_valorvenda, fornec_id, prod_desconto, prod_qtdestoque) values	
-  ('".$nome."', '".$nome."', '".$descricao."', '".$valor_unit."', '".$valor_venda."', '".$fornec_id."', '".$valor_desc."', '".$qtd_estoque."')")
+  ('".$nome."', '".$selecione."', '".$descricao."', '".$valor_unit."', '".$valor_venda."', '".$fornec_id."', '".$valor_desc."', '".$qtd_estoque."')")
    or die (mysql_error());        
 }    
 header('Location:busca_prod.php');

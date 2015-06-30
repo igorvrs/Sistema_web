@@ -22,7 +22,7 @@ function mask($val, $mask)
 ?>
 
 <?php
-header("Content-Type: text/html; charset=ISO-8859-1",true);
+header('Content-Type: text/html; charset=latin1_swedish_ci');
 include('conecta.php');
 $busca_cnpj = (!empty($_REQUEST['bus_cnpj']) ? $_REQUEST['bus_cnpj'] : '' );
 

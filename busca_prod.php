@@ -1,6 +1,7 @@
 <?php
 
-header('Content-Type: text/html; charset=utf-8');
+header('Content-Type: text/html; charset=latin1_swedish_ci');
+header('Content-Type: text/html; charset=UTF-8');
 include('conecta.php');
 $id_prod = (!empty($_REQUEST['id_prod']) ? $_REQUEST['id_prod'] : '' );
 

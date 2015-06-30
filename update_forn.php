@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: text/html; charset=latin1_swedish_ci');
 include('conecta.php');
 
 $id = $_REQUEST['id'];

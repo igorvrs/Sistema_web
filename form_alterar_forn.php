@@ -1,4 +1,5 @@
 <?php 
+header('Content-Type: text/html; charset=latin1_swedish_ci');
 include('conecta.php');
 $id = $_GET["id"];
 $sql = ("select * from fornecedores where forn_id = '".$id."'");

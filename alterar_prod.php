@@ -1,5 +1,5 @@
 <?php 
-header('Content-Type: text/html; charset=utf-8');
+header('Content-Type: text/html; charset=latin1_swedish_ci');
 include('conecta.php');
 $id = $_GET['id_produto'];
 $sql = ("select * from produto where prod_id = '".$id."'");
