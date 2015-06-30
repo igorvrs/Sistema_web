@@ -5,8 +5,7 @@ $fornec_id = $_POST['id_forn'];
 $nome = $_POST['nome'];
 $selecione = $_POST['selecione'];
 $selecione = iconv('UTF-8', 'ISO-8859-1', $selecione);
-echo($selecione);
-exit();
+
 //$selecione = utf8_decode($selecione);
 $qtd_estoque = $_POST['qtd_estoque'];
 $valor_unit = $_POST['valor'];
@@ -40,4 +39,5 @@ while($escrever=mysql_fetch_array($res)){
   ('".$nome."', '".$nome."', '".$descricao."', '".$valor_unit."', '".$valor_venda."', '".$fornec_id."', '".$valor_desc."', '".$qtd_estoque."')")
    or die (mysql_error());        
 }    
+header('Location:busca_prod.php');
 ?>

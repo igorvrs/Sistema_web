@@ -53,7 +53,15 @@ Descrição:<br>
 </fieldset> <br>
 <input type="submit" name="cadastrar" id="cadastrar" value="Cadastrar" />
 </form>
-<input type="submit" id="calcular" value="Calcular" onclick="calcula()"/>
+<input type="button" id="calcular" value="Calcular" onclick="calcula()"/> <br><br>
+<form name="busca_forn" method="post" id="busca_forn" action="busca_prod.php">
+<fieldset>
+<legend> Busca</legend>
+Busca por ID de produto:<br>
+<input type="text" name="id_prod" id="id_prod" size="5" value=""/> &nbsp;&nbsp;&nbsp;&nbsp;
+<input type="submit" value="Buscar">
+</fieldset>
+</form>
 </body>
 </head>
 </html>
