@@ -13,11 +13,7 @@ $valor_venda = $_POST['lucro'];
 $valor_desc = $_POST['desconto_max'];
 $descricao = $_POST['descricao'];
 
-/*if ($selecione == 1)
-   $selecione = "perecível";
-else
-   $selecione = "não perecível";
-*/
+
 
 $res = mysql_query("select * from fornecedores where forn_id = '".$fornec_id."'");
 

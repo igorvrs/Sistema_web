@@ -20,7 +20,7 @@ while($escrever=mysql_fetch_array($res)){
 echo "<tr><td>" . $escrever['prod_id'] . "</td><td>" . $escrever['prod_nome'] . "</td> <td>" . $escrever['prod_tipo'] . "</td>
 <td>" . $escrever['prod_qtdestoque'] . "</td><td>" . $escrever['prod_valorunit'] . "</td><td>" . $escrever['prod_valorvenda'] . "</td>
 <td>" . $escrever['prod_desconto'] . "</td><td>" . $escrever['prod_desc'] . "</td><td><a href = 'alterar_prod.php?id_produto=".$escrever['prod_id']."'>Alterar</a>
-</td><td><a href = 'excluir_forn.php?id=".$escrever['prod_id']."'>Excluir</a></td></tr>"; 
+</td><td><a href = 'excluir_prod.php?id=".$escrever['prod_id']."'>Excluir</a></td></tr>"; 
 
 }
 

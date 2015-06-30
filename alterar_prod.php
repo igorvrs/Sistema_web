@@ -1,11 +1,12 @@
 <?php 
+header('Content-Type: text/html; charset=utf-8');
 include('conecta.php');
 $id = $_GET['id_produto'];
 $sql = ("select * from produto where prod_id = '".$id."'");
 $dados = mysql_query($sql, $conexao);
 $escrever = mysql_fetch_array($dados);
 
-$id = $escrever['prod_id'];
+$id_prod = $escrever['prod_id'];
 $nome = $escrever['prod_nome'];
 $tipo = $escrever['prod_tipo'];
 $qtd_estoque = $escrever['prod_qtdestoque'];
@@ -42,6 +43,7 @@ function calcula(){
 <form name="produto" method="post" id="produto" action="cad_prod.php">
 <fieldset>
 <legend>Dados cadastrais</legend>
+<input type="hidden" name="prod_id" id="prod_id" size="8" maxlength="11" value="<?php echo $id_prod ?>"/> 
 ID do forncedor:
 <input type="text" name="id_forn" id="id_forn" size="8" maxlength="11" value="<?php echo $fornec_id ?>"/><br>
 Nome:<br>
