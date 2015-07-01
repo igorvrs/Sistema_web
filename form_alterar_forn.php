@@ -26,38 +26,51 @@ $email = $escrever['forn_email'];
 <html>
 <head>
 <body>
-
-<form name="fornecedor" method="post" id="fornecedor" action="update_forn.php">
 <meta charset="utf-8">
-<fieldset>
-<legend>Dados para alteracao</legend>
-<input type="hidden" name="id" id="id" size="3" value="<?php echo $id  ?>" /> <br>
-Razão:<br>
-<input type="text" name="razao" id="razao" size="50" value="<?php echo $razao  ?>" /> &nbsp;&nbsp;&nbsp;
-CNPJ:
-<input type="text" name="cnpj" size="20" maxlength="14" value="<?php echo $cnpj ?> "/> <br>
-Rua:<br>
-<input type="text" name="rua" size="50" value="<?php echo $rua ?>"/> &nbsp;&nbsp;&nbsp;
-Numero:
-<input type="text" name="numero" size="10" value="<?php echo $numero ?>"/> <br>
-Complemento:<br>
-<input type="text" name="complemento" size="20" value="<?php echo $complemento ?>"/>&nbsp;&nbsp;&nbsp;
-Bairro:
-<input type="text" name="bairro" size="15" value="<?php echo $bairro ?>"/>&nbsp;&nbsp;&nbsp;
-CEP:
-<input type="text" name="cep" size="10" maxlength="8" value="<?php echo $cep ?>"/> <br>
-Cidade: <br>
-<input type="text" name="cidade" size="20" value="<?php echo $cidade ?>"/>&nbsp;&nbsp;&nbsp;
-UF:
-<input type="text" name="uf" size="3" maxlength="2" value="<?php echo $uf ?>"/>&nbsp;&nbsp;&nbsp;
-País:
-<input type="text" name="pais" size="15" value="<?php echo $pais ?>"/> <br>
-Fone:<br>
-<input type="text" name="fone" size="20" maxlength="11" value="<?php echo $fone ?>"/>&nbsp;&nbsp;&nbsp;
+<link rel="stylesheet" href="css/css/style.css" />
+<link href='http://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.uniform.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+      $(function(){
+        $("input:checkbox, input:radio, input:file, select").uniform();
+      });
+    </script>
+<script>
+
+</script>
+<h1>Atualizar Fornecedores</h1>
+<form name="fornecedor" method="post" id="fornecedor" action="update_forn.php">
+<input type="hidden" name="id" size="3" value="<?php echo $id ?>" />
+<label for="razao">Razão:</label>
+<input type="text" name="razao" id="razao" size="60" value="<?php echo $razao ?>"/> <br><br>	
+<label for="cnpj">CNPJ:</label>
+<input type="text" name="cnpj" id="cnpj" size="20" maxlength="14" value="<?php echo $cnpj ?>"/> <br><br>
+
+<label for="rua">Rua:</label>
+<input type="text" name="rua" id="rua" size="30" value="<?php echo $rua ?>"/>
+
+<label for="numero">Numero:</label>
+<input type="text" name="numero" id="numero" size="7" value="<?php echo $numero ?>"/> <br><br>
+
+<label for="complemento">Complemento:</label><br>
+<input type="text" id="complemento" name="complemento" size="15" value="<?php echo $complemento ?>"/>
+<label for="bairro">Bairro:</label>
+<input type="text" name="bairro" id="bairro" size="15" value="<?php echo $bairro ?>"/>
+<label for="cep">CEP:</label>
+<input type="text" name="cep" size="10" id="cep"  maxlength="8" value="<?php echo $cep ?>"/> <br><br>
+<label for="cidade">Cidade:</label><br>
+<input type="text" name="cidade" id="cidade" size="20" value="<?php echo $cidade ?>"/>
+<label for="uf">UF:</label> 	
+<input type="text" name="uf" size="3" id="uf" maxlength="2" value="<?php echo $uf ?>"/>
+<label for="pais">País:</label>
+<input type="text" name="pais" size="15" id="pais" value="<?php echo $pais ?>"/> <br><br>
+<label for="fone">Telefone:</label><br>
+<input type="text" name="fone" size="15" id="fone" maxlength="11" value="<?php echo $fone ?>"/>
 E-mail:
 <input type="text" name="email" size="40" id="email" value="<?php echo $email ?>"/> <br>
-</fieldset> <br>
-<input type="submit" value="Alterar">
+ <br>
+<input type="submit" value="Atualizar">
 </form>
 </body>
 </head>

@@ -1,0 +1,20 @@
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/css/style.css" />
+<link href='http://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.uniform.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+      $(function(){
+        $("input:checkbox, input:radio, input:file, select").uniform();
+      });
+    </script>
+<h1>Pesquisa de Fornecedor</h1>
+<form name="busca" method="post" id="busca" action="busca_forn.php">
+<label for="bus_cnpj"> CNPJ: </label>
+<input type="text" name="bus_cnpj" id="bus_cnpj" size="30" value=""/>
+<input type="submit" value="Pesquisar" />
+</form>
+</head>
+</html>
