@@ -37,7 +37,6 @@ $email = $escrever['forn_email'];
       });
     </script>
 <script>
-
 </script>
 <h1>Atualizar Fornecedores</h1>
 <form name="fornecedor" method="post" id="fornecedor" action="update_forn.php">

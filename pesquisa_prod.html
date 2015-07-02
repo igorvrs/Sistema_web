@@ -1,0 +1,20 @@
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/css/style.css" />
+<link href='http://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.uniform.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+      $(function(){
+        $("input:checkbox, input:radio, input:file, select").uniform();
+      });
+    </script>
+<h1>Pesquisa de Produtos</h1>
+<form name="busca_prod" method="post" id="busca_prod" action="busca_prod.php">
+<label for="bus_cnpj"> ID do produto: </label>
+<input type="text" name="id_prod" id="id_prod" size="30" value=""/>
+<input type="submit" value="Pesquisar" />
+</form>
+</head>
+</html>

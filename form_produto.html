@@ -17,51 +17,56 @@ function calcula(){
 	
 	} 
 </script> 
-
+<script>
+function pesquisa(){
+window.location.href="pesquisa_prod.html";
+}
+</script>
 <html> 
 <head> 
 <body> 
 <meta charset="utf-8">
+<link rel="stylesheet" href="css/css/style.css" />
+<link href='http://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.uniform.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+      $(function(){
+        $("input:checkbox, input:radio, input:file, select").uniform();
+      });
+    </script>
+<h1>Cadastro de Produtos</h1>
 <form name="produto" method="post" id="produto" action="cad_prod.php">
-<fieldset>
-<legend>Dados cadastrais</legend>
-ID do forncedor:
-<input type="text" name="id_forn" id="id_forn" size="8" maxlength="11" value=""/><br>
-Nome:<br>
-<input type="text" name="nome" id="nome" size="50" maxlength="64" value=""/> &nbsp;&nbsp;&nbsp;
-<select title="Selecione" name="selecione">
+<label for="id_forn">ID do Fornecedor:</label>
+<input type="text" name="id_forn" id="id_forn" size="8" maxlength="11" value=""/><br><br>
+
+<label for="nome">Nome do produto:</label><br>
+<input type="text" name="nome" id="nome" size="50" maxlength="64" value=""/>
+
+<select id="selecione" name="selecione">
   <option>Selecione</option>
   <option value="perecivel">Perecivil</option>
-  <option value="naoperecivel">Nao perecivil</option>
-</select title="Selecione"> &nbsp;&nbsp;&nbsp;&nbsp; 
-Quantidade de estoque:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="qtd_estoque" id="qtd_estoque" size="10" value=""/>
+  <option value="naoperecivel">Não perecivil</option>
+</select> <br><br>
+<label for="qtd_estoque">Quantidade de estoque:</label>
+<input type="text" name="qtd_estoque" id="qtd_estoque" size="10" value=""/>
 
-<br><br>
-Valor unitário:
-<input type="text" name="valor" id="valor" size="10" value=""/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<label for="valor">Valor unitário:</label>
+<input type="text" name="valor" id="valor" size="10" value=""/> <br><br>
 
-Valor de venda: 
- <input type="text" name="lucro" id="lucro" size="10" readonly value=""  /> &nbsp;&nbsp;&nbsp; 
-Valor máximo de desconto:
-<input type="text" name="desconto_max" id="desconto_max" size="10" readonly value=""  /> <br>
-<br>
-Descrição:<br>
+<label for="lucro">Valor de venda:</label>
+<input type="text" name="lucro" id="lucro" size="10" readonly value=""  />  
+
+<label for="desconto_max">Desconto máx:</label>
+<input type="text" name="desconto_max" id="desconto_max" size="10" readonly value=""  /> <br><br>
+
+<label for="descricao">Descrição:</label><br>
 <textarea name="descricao" rows="5" cols="60"></textarea> 
-
-</fieldset> <br>
+<br><br>
 <input type="submit" name="cadastrar" id="cadastrar" value="Cadastrar" />
 </form>
-<input type="button" id="calcular" value="Calcular" onclick="calcula()"/> <br><br>
-<form name="busca_forn" method="post" id="busca_forn" action="busca_prod.php">
-<fieldset>
-<legend> Busca</legend>
-Busca por ID de produto:<br>
-<input type="text" name="id_prod" id="id_prod" size="5" value=""/> &nbsp;&nbsp;&nbsp;&nbsp;
-<input type="submit" value="Buscar">
-</fieldset>
-</form>
+<input type="button" id="calcular" value="Calcular" onclick="calcula()"/> 
+<input type="button" id="Pesquisar_prod" value="Pesquisar" onclick="pesquisa()"/>
 </body>
 </head>
 </html>
