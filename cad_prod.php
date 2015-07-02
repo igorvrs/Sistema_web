@@ -4,15 +4,11 @@ include('conecta.php');
 $fornec_id = $_POST['id_forn'];
 $nome = $_POST['nome'];
 $selecione = $_POST['selecione'];
-$selecione = iconv('UTF-8', 'ISO-8859-1', $selecione);
-
-//$selecione = utf8_decode($selecione);
 $qtd_estoque = $_POST['qtd_estoque'];
 $valor_unit = $_POST['valor'];
 $valor_venda = $_POST['lucro'];
 $valor_desc = $_POST['desconto_max'];
 $descricao = $_POST['descricao'];
-
 
 
 $res = mysql_query("select * from fornecedores where forn_id = '".$fornec_id."'");

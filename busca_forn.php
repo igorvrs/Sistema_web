@@ -22,7 +22,7 @@ function mask($val, $mask)
 ?>
 
 <?php
-header('Content-Type: text/html; charset=latin1_swedish_ci');
+header('Content-Type: text/html; charset=utf-8');
 include('conecta.php');
 $busca_cnpj = (!empty($_REQUEST['bus_cnpj']) ? $_REQUEST['bus_cnpj'] : '' );
 
@@ -32,8 +32,22 @@ if ($busca_cnpj == '')
 else	
     $res = mysql_query("select * from fornecedores where forn_cnpj = '".$busca_cnpj."'"); 
 
-echo "<table><tr><td>id</td><td>cnpj</td><td>razao</td><td>rua</td><td>numero</td><td>complemento</td><td>bairro</td><td>cep</td>
-<td>cidade</td><td>uf</td><td>pais</td><td>fone</td><td>email</td><td>alterar</td><td>excluir</td></tr>";
+echo "<html>
+<head>
+<body>
+<meta charset='utf-8'>
+<link rel='stylesheet' href='css/css/style.css' />
+<link href='http://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'/>
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js' type='text/javascript' charset='utf-8'></script>
+    <script src='js/jquery.uniform.min.js' type='text/javascript' charset='utf-8'></script>
+    <script type='text/javascript' charset='utf-8'>
+      $(function(){
+        $('input:checkbox, input:radio, input:file, select').uniform();
+      });
+    </script>
+	<h1>Lista de Fornecedores</h1> 
+<table><tr><th>ID</th><th>CNPJ</th><th>Razão</th><th>Rua</th><th>Numero</th><th>Complemento</th><th>Bairro</th><th>Cep</th>
+<th>Cidade</th><th>UF</th><th>País</th><th>Telefone</th><th>E-mail</th><th>Alterar</th><th>Excluir</th></tr>";
 
 
 while($escrever=mysql_fetch_array($res)){
@@ -53,7 +67,7 @@ echo "<tr><td>" . $escrever['forn_id'] . "</td><td>"  .$cnpj_masc. "</td><td>" .
 
 }
 
-echo "</table>"; 
+echo "</tbody></table></head></html>"; 
 
 
 ?>

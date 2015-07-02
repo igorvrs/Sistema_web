@@ -25,7 +25,7 @@ window.location.href="pesquisa_prod.html";
 <html> 
 <head> 
 <body> 
-<meta charset="utf-8">
+<meta charset="latin1_swedish_ci">
 <link rel="stylesheet" href="css/css/style.css" />
 <link href='http://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'/>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
@@ -43,30 +43,33 @@ window.location.href="pesquisa_prod.html";
 <label for="nome">Nome do produto:</label><br>
 <input type="text" name="nome" id="nome" size="50" maxlength="64" value=""/>
 
-<select id="selecione" name="selecione">
-  <option>Selecione</option>
-  <option value="perecivel">Perecivil</option>
-  <option value="naoperecivel">Não perecivil</option>
-</select> <br><br>
+
+<select name="selecione" id="selecione">
+                <option>Selecione</option>
+                <option value="Perecivel">Perecivel</option>
+                <option value="Nao perecivel">Nao perecivel</option>
+            </select> <br><br>
 <label for="qtd_estoque">Quantidade de estoque:</label>
 <input type="text" name="qtd_estoque" id="qtd_estoque" size="10" value=""/>
 
-<label for="valor">Valor unitário:</label>
+<label for="valor">Valor unitario:</label>
 <input type="text" name="valor" id="valor" size="10" value=""/> <br><br>
 
 <label for="lucro">Valor de venda:</label>
 <input type="text" name="lucro" id="lucro" size="10" readonly value=""  />  
 
-<label for="desconto_max">Desconto máx:</label>
-<input type="text" name="desconto_max" id="desconto_max" size="10" readonly value=""  /> <br><br>
 
-<label for="descricao">Descrição:</label><br>
-<textarea name="descricao" rows="5" cols="60"></textarea> 
+<label for="desconto_max"charset="latin1_swedish_ci">Desconto max:</label>
+<input charset="latin1_swedish_ci" type="text" name="desconto_max" id="desconto_max" size="10" readonly value=""  /> <br><br>
+
+<label for="descricao">Descricao:</label><br>
+<textarea name="descricao" rows="3" cols="60"></textarea> 
 <br><br>
 <input type="submit" name="cadastrar" id="cadastrar" value="Cadastrar" />
-</form>
 <input type="button" id="calcular" value="Calcular" onclick="calcula()"/> 
 <input type="button" id="Pesquisar_prod" value="Pesquisar" onclick="pesquisa()"/>
+</form>
+</meta>
 </body>
 </head>
 </html>

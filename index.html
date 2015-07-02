@@ -1,0 +1,32 @@
+<html>
+<head>
+<body>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/css/style.css" />
+<link href='http://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.uniform.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+      $(function(){
+        $("input:checkbox, input:radio, input:file, select").uniform();
+      });
+    </script>
+
+<script>
+function fornecedores(){
+window.location.href='fornecedores.html';
+}
+</script>
+<script>
+function produto(){
+window.location.href='form_produto.html';
+}
+</script>	
+	
+<h1>Menu</h1>	
+<input type="button" value="Fornecedores" id="bt_forn" onclick="fornecedores()"/>
+<input type="button" value="Produtos" onclick="produto()"/>
+	
+</body>
+</head>
+</html>	
