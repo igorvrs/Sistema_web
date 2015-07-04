@@ -40,7 +40,7 @@ function calcula(){
 <head> 
 <body> 
 <meta charset="utf-8">
-<form name="produto" method="post" id="produto" action="cad_prod.php">
+<form name="produto" method="post" id="produto" action="update_prod.php">
 <fieldset>
 <legend>Dados cadastrais</legend>
 <input type="hidden" name="prod_id" id="prod_id" size="8" maxlength="11" value="<?php echo $id_prod ?>"/> 
@@ -50,8 +50,8 @@ Nome:<br>
 <input type="text" name="nome" id="nome" size="50" maxlength="64" value="<?php echo $nome ?>"/> &nbsp;&nbsp;&nbsp;
 <select title="Selecione" name="selecione">
   <option>Selecione</option>
-  <option value="perecivel">Perecivil</option>
-  <option value="naoperecivel">Nao perecivil</option>
+  <option value="Perecivel">Perecivil</option>
+  <option value="Nao perecivel">Nao perecivil</option>
 </select title="Selecione"> &nbsp;&nbsp;&nbsp;&nbsp; 
 Quantidade de estoque:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="qtd_estoque" id="qtd_estoque" size="10" value="<?php echo $qtd_estoque ?>"/>

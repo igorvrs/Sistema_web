@@ -45,7 +45,7 @@ echo "<html>
         $('input:checkbox, input:radio, input:file, select').uniform();
       });
     </script>
-	<h1>Lista de Fornecedores</h1> 
+	<h1>Lista de Fornecedores</h1> 	
 <table><tr><th>ID</th><th>CNPJ</th><th>Razão</th><th>Rua</th><th>Numero</th><th>Complemento</th><th>Bairro</th><th>Cep</th>
 <th>Cidade</th><th>UF</th><th>País</th><th>Telefone</th><th>E-mail</th><th>Alterar</th><th>Excluir</th></tr>";
 
